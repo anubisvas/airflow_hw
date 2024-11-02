@@ -1,0 +1,5 @@
+.DS_Store
+config
+dags/__pycache__/*
+data/models/__pycache__/*
+modules/__pycache__/*

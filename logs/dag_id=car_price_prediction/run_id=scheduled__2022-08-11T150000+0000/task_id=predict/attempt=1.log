@@ -1,0 +1,26 @@
+[2024-11-02T23:07:45.692+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-02T23:07:45.746+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: car_price_prediction.predict scheduled__2022-08-11T15:00:00+00:00 [queued]>
+[2024-11-02T23:07:45.769+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: car_price_prediction.predict scheduled__2022-08-11T15:00:00+00:00 [queued]>
+[2024-11-02T23:07:45.776+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-11-02T23:07:45.834+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): predict> on 2022-08-11 15:00:00+00:00
+[2024-11-02T23:07:45.859+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=783) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-02T23:07:45.868+0000] {standard_task_runner.py:72} INFO - Started process 866 to run task
+[2024-11-02T23:07:45.869+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'car_price_prediction', 'predict', 'scheduled__2022-08-11T15:00:00+00:00', '--job-id', '177', '--raw', '--subdir', 'DAGS_FOLDER/hw_dag.py', '--cfg-path', '/tmp/tmpczi_qou7']
+[2024-11-02T23:07:45.873+0000] {standard_task_runner.py:105} INFO - Job 177: Subtask predict
+[2024-11-02T23:07:46.008+0000] {task_command.py:467} INFO - Running <TaskInstance: car_price_prediction.predict scheduled__2022-08-11T15:00:00+00:00 [running]> on host 574d409178bb
+[2024-11-02T23:07:46.395+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='car_price_prediction' AIRFLOW_CTX_TASK_ID='predict' AIRFLOW_CTX_EXECUTION_DATE='2022-08-11T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-08-11T15:00:00+00:00'
+[2024-11-02T23:07:46.402+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-02T23:07:46.966+0000] {predict.py:27} INFO - predictions saved as /opt/***/data/predictions/preds_202411022307.csv
+[2024-11-02T23:07:46.967+0000] {python.py:240} INFO - Done. Returned value was:        car_id   preds
+0  7310993818     low
+0  7313922964    high
+0  7315173150     low
+0  7316152972  medium
+0  7316509996    high
+[2024-11-02T23:07:47.178+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-02T23:07:47.181+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=car_price_prediction, task_id=predict, run_id=scheduled__2022-08-11T15:00:00+00:00, execution_date=20220811T150000, start_date=20241102T230745, end_date=20241102T230747
+[2024-11-02T23:07:47.307+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-02T23:07:47.346+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-02T23:07:47.353+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
